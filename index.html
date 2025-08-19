@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matias Rosenberg – Portfolio</title>
+  <meta name="description" content="Industrial and Systems Engineering student building ML + analytics for manufacturing. Predictive modeling, Power BI, and process optimization." />
+  <meta property="og:title" content="Matias Rosenberg – Portfolio" />
+  <meta property="og:description" content="Predictive modeling, Power BI dashboards, and manufacturing analytics." />
+  <style>
+    :root { --bg:#0b0c10; --fg:#f5f7fa; --muted:#9aa3ae; --accent:#00c2a8; }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial}
+    h1,h2,h3{margin:0 0 .5rem}
+    h1{font-size:2.2rem}
+    h2{font-size:1.5rem;margin-top:2rem}
+    .wrap{max-width:900px;margin:0 auto;padding:24px}
+    .small{font-size:.9rem;color:var(--muted)}
+    header{padding:64px 24px 24px}
+    header p{color:var(--muted)}
+    .cta{margin-top:12px}
+    .btn{display:inline-block;margin:0 8px 8px 0;padding:10px 14px;border-radius:12px;background:var(--accent);color:#002;text-decoration:none;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--fg)}
+    .cards{list-style:none;padding:0;display:grid;gap:12px}
+    .cards li{border:1px solid #1f232b;border-radius:12px;padding:14px;background:#0f1116}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{padding-bottom:24px}
+    .pill{display:inline-block;padding:2px 8px;border:1px solid #2a2e36;border-radius:999px;color:var(--muted);font-size:.85rem;margin-right:6px}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1>Matias Rosenberg</h1>
+    <p>Industrial and Systems Engineering @ Texas A&M • ML in Manufacturing</p>
+    <div class="cta">
+      <a class="btn" href="resume.pdf" download>Download Resume (PDF)</a>
+      <a class="btn ghost" href="#projects">View Projects</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about">
+      <h2>About</h2>
+      <p>I build practical data products for factories. My focus is Power BI dashboards and machine learning models that standardize insert consumption and reduce cost per piece. I like clean data pipelines, simple visuals, and measurable impact.</p>
+      <div class="small">
+        <span class="pill">Python</span>
+        <span class="pill">scikit-learn</span>
+        <span class="pill">Pandas</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">Streamlit</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="cards">
+        <li>
+          <h3>Tenaris USA – McCarty Threading Facility</h3>
+          <p>Built a Random Forest model to predict pieces per insert from process variables like coolant concentration, RPM, and OD. Automated data pulls and refreshed cost reports for cutting inserts. Results used by production and cost teams to monitor trends and make faster decisions. Estimated savings ≈ $200k per year.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="cards">
+        <li>
+          <h3>Insert Life Predictor</h3>
+          <p>Python + scikit-learn + Streamlit. Forecasts pieces per insert and standardizes consumption. Connected to Power BI for real time monitoring.</p>
+        </li>
+        <li>
+          <h3>Manufacturing Analytics Dashboard</h3>
+          <p>Power BI dashboard to track performance KPIs and insert cost per piece across product lines. Highlights outliers and trends for supervisors.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:you@tamu.edu">Email</a> ·
+        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a> ·
+        <a href="https://github.com/your-handle" target="_blank" rel="noreferrer">GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="wrap small">
+    <p>© <span id="y"></span> Matias Rosenberg</p>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
