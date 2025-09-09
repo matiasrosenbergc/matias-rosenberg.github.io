@@ -10,6 +10,11 @@
   --bg:#f6fbff;            /* page background (very light blue) */
   --radius:18px;
   --shadow:0 10px 28px rgba(14,22,33,.08);
+
+  /* NEW: subtle brand tints for emphasis */
+  --ok:#2f9e44;            /* optimization / impact */
+  --dx:#1f6feb;            /* data / analytics */
+  --team:#7a5af8;          /* teamwork */
 }
 
 /* ====== Base ====== */
@@ -49,15 +54,44 @@ h3{font-size:1.1rem}
 /* ====== Chips / Pills ====== */
 .pill{display:inline-block;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.86rem;margin:0 6px 6px 0;background:#f0f8ff}
 
+/* NEW: Themed pills to emphasize your brand pillars */
+.pill-row{margin-top:8px}
+.pill.dx{background:rgba(31,111,235,.08);color:#1f3f6e;border-color:rgba(31,111,235,.18)}
+.pill.team{background:rgba(122,90,248,.10);color:#3f3379;border-color:rgba(122,90,248,.18)}
+.pill.ok{background:rgba(47,158,68,.10);color:#1f5231;border-color:rgba(47,158,68,.18)}
+
 /* ====== Cards & Grids ====== */
 .cards{list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr}
 .card{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:16px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .15s ease}
 .card:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(14,22,33,.10)}
 
+/* NEW: “timeline” accent for Experience cards (left bar) */
+#experience .card{position:relative;padding-left:18px}
+#experience .card::before{
+  content:"";
+  position:absolute;left:0;top:14px;bottom:14px;width:4px;
+  background:linear-gradient(180deg, var(--dx), var(--accent));
+  border-radius:8px
+}
+
+/* NEW: metric highlights for impact statements */
+.kpi{display:inline-block;padding:2px 8px;border-radius:8px;margin-left:6px;font-weight:700}
+.kpi.dx{background:rgba(31,111,235,.10);color:#154a9a}
+.kpi.ok{background:rgba(47,158,68,.12);color:#1f6a38}
+
+/* NEW: nicer bullets for resume lists */
+.cards .small li{margin:6px 0 6px 0;list-style:none;position:relative;padding-left:22px}
+.cards .small li::before{
+  content:"";
+  position:absolute;left:0;top:.6em;width:10px;height:10px;border-radius:3px;
+  background:linear-gradient(135deg,var(--accent),#bfe0ff);
+  box-shadow:0 0 0 2px rgba(188,218,255,.45)
+}
+
+/* ====== Grids ====== */
 .grid{display:grid;gap:16px}
 .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-
 @media (max-width:900px){
   .grid-2,.grid-3{grid-template-columns:1fr}
   .hero h1{font-size:2.2rem}
@@ -70,6 +104,12 @@ h3{font-size:1.1rem}
 .section + .section{margin-top:8px}
 .section h2{position:relative;padding-top:8px}
 .section h2::after{content:"";display:block;height:2px;width:72px;background:var(--accent);border-radius:2px;margin-top:10px}
+
+/* NEW: subtle section badges to cue content type */
+#skills h2::after{background:var(--dx)}
+#experience h2::after{background:var(--team)}
+#projects h2::after{background:var(--ok)}
+#leadership h2::after{background:var(--accent)}
 
 /* ====== Footer ====== */
 footer{padding:26px 22px;border-top:1px solid var(--line)}
