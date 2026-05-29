@@ -1,0 +1,107 @@
+:root{
+  --accent:#155e75;
+  --accent-dark:#0f172a;
+  --accent-2:#e0f2fe;
+  --accent-3:#f0f9ff;
+  --ink:#111827;
+  --muted:#4b5563;
+  --panel:#ffffff;
+  --line:#d7dee8;
+  --bg:#f6f8fb;
+  --radius:14px;
+  --shadow:0 12px 30px rgba(15,23,42,.07);
+  --ok:#166534;
+  --dx:#1d4ed8;
+  --team:#6d28d9;
+}
+
+/* ====== Base ====== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.65 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+img{max-width:100%;height:auto;border-radius:12px}
+
+/* Links */
+a{color:#075985;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* Type */
+h1,h2,h3{margin:0 0 .6rem;line-height:1.2}
+h1{font-size:3rem;letter-spacing:-.04em;color:#ffffff}
+h2{font-size:1.55rem;margin-top:2rem;color:#0f172a}
+h3{font-size:1.08rem;color:#111827}
+p{margin-top:0}
+.small{font-size:.93rem;color:var(--muted)}
+.muted{color:#dbeafe}
+.wrap{max-width:1060px;margin:0 auto;padding:22px}
+.section{padding:16px 0}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+/* ====== Header / Hero ====== */
+.site-header{background:linear-gradient(135deg,#0f172a 0%,#155e75 58%,#0e7490 100%);border-bottom:1px solid rgba(255,255,255,.12)}
+.top-nav{display:flex;justify-content:flex-end;gap:22px;padding-top:18px;padding-bottom:0}
+.top-nav a{color:#e0f2fe;font-size:.88rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.top-nav a:hover{color:#ffffff}
+.hero{padding:54px 22px 34px}
+.hero-grid{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center}
+.eyebrow{margin:0 0 8px;color:#bae6fd;font-size:.84rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+.hero-title{margin:0 0 8px;color:#f8fafc;font-size:1.2rem;font-weight:700}
+.hero-copy{max-width:760px;color:#dbeafe;font-size:1.03rem;margin-bottom:22px}
+.avatar{width:144px;height:144px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.95);box-shadow:0 18px 44px rgba(2,6,23,.25)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:34px}
+.hero-stats div{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:14px;backdrop-filter:blur(10px)}
+.hero-stats strong{display:block;color:#ffffff;font-size:1.35rem;line-height:1.1;margin-bottom:5px}
+.hero-stats span{display:block;color:#dbeafe;font-size:.86rem;line-height:1.35}
+@media (max-width:900px){.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.hero-grid{grid-template-columns:1fr}.top-nav{justify-content:flex-start;flex-wrap:wrap}.hero-stats{grid-template-columns:1fr}h1{font-size:2.35rem}}
+
+/* ====== Buttons ====== */
+.btn{display:inline-block;margin:0 10px 10px 0;padding:11px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#ffffff;color:#0f172a;font-weight:800;box-shadow:0 12px 26px rgba(2,6,23,.16);transition:transform .12s ease, box-shadow .12s ease, background .12s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 16px 34px rgba(2,6,23,.22);background:#f8fafc;text-decoration:none}
+.btn.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:#ffffff;box-shadow:none}
+.btn.ghost:hover{background:rgba(255,255,255,.15)}
+main .btn.ghost{background:#ffffff;border-color:#cbd5e1;color:#0f172a;box-shadow:var(--shadow)}
+main .btn.ghost:hover{background:#f8fafc}
+
+/* ====== Chips / Pills ====== */
+.pill{display:inline-block;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:#334155;font-size:.84rem;font-weight:700;margin:0 7px 7px 0;background:#f8fafc}
+.pill-row{margin-top:10px}
+.pill.dx{background:rgba(29,78,216,.07);color:#1e3a8a;border-color:rgba(29,78,216,.16)}
+.pill.team{background:rgba(109,40,217,.08);color:#4c1d95;border-color:rgba(109,40,217,.16)}
+.pill.ok{background:rgba(22,101,52,.08);color:#14532d;border-color:rgba(22,101,52,.16)}
+
+/* ====== Cards & Grids ====== */
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:18px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(15,23,42,.10);border-color:#b7c3d4}
+.featured-card{border-left:5px solid var(--accent)}
+#experience .card{position:relative;padding-left:20px}
+#experience .card::before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:4px;background:linear-gradient(180deg,var(--accent),#38bdf8);border-radius:8px}
+.cards .small li,.project-card .small li{margin:7px 0;list-style:none;position:relative;padding-left:22px}
+.cards .small li::before,.project-card .small li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+/* ====== Grids ====== */
+.grid{display:grid;gap:16px}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.project-grid{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.project-card{display:flex;flex-direction:column}
+.project-label{margin:0 0 8px;color:var(--accent);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+@media (max-width:980px){.grid-2,.grid-3,.project-grid{grid-template-columns:1fr}}
+
+/* ====== Resume iframe ====== */
+.resume-embed{width:100%;height:680px;border:0;border-radius:var(--radius);box-shadow:var(--shadow);background:#fff}
+
+/* ====== Section separators ====== */
+.section + .section{margin-top:8px}
+.section h2{position:relative;padding-top:8px}
+.section h2::after{content:"";display:block;height:3px;width:72px;background:var(--accent);border-radius:4px;margin-top:10px}
+#skills h2::after{background:var(--dx)}
+#experience h2::after{background:var(--team)}
+#projects h2::after{background:var(--ok)}
+#leadership h2::after{background:var(--accent)}
+.contact-card{background:#ffffff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-top:26px}
+
+/* ====== Footer ====== */
+footer{padding:26px 22px;border-top:1px solid var(--line);margin-top:20px}
